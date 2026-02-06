@@ -1,0 +1,365 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'MinhaFonte';
+}
+
+/* ======= BODY ======= */
+body {
+  background-color: white;
+  color: #333;
+  line-height: 2.5;
+}
+
+/* ======= TOP BAR ======= */
+.top-bar {
+  background-color: #9d5c1f;
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 0;
+}
+
+.top-bar a {
+  color: #fff;
+  margin-left: 15px;
+  transition: 0.3s;
+}
+
+.top-bar a:hover {
+  color: #ffa807;
+}
+
+/* ======= LOGO ======= */
+.logo {
+  width: 80px; /* tamanho da logo */
+  max-height: 60px; /* limite de altura */
+  height: auto;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 0.5rem; /* espaço entre logo e texto */
+}
+
+.logo2 {
+  width: 80px;       /* largura fixa */
+  max-height: 60px;  /* limite máximo de altura */
+  height: auto;      /* mantém proporção */
+  display: block;
+  border-radius: 50%; /* se quiser arredondar */
+  object-fit: cover;
+  margin-right: 0.1rem; /* espaço entre logo e texto */
+}
+
+
+/* ======= NAVBAR ======= */
+.navbar {
+  min-height: 70px; 
+  padding: 0.5rem 1rem; 
+  background-color: #fff !important;
+  border-bottom: 1px solid #9d5c1f4d;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* Logo + texto */
+.navbar-brand span {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #9d5c1f;
+}
+
+/* ======= LINKS ======= */
+.navbar-nav .nav-link {
+  font-weight: 600;
+  margin-right: 20px;
+  color: #9d5c1f;
+  position: relative;
+  padding-bottom: 4px; /* espaço para underline */
+  transition: 0.3s;
+}
+
+/* Animação da barra */
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #9d5c1f;
+  transition: width 0.3s ease;
+}
+
+/* Aplica apenas aos links que NÃO têm .no-underline */
+.navbar-nav .nav-link:not(.no-underline):hover::after,
+.navbar-nav .nav-link:not(.no-underline).active::after {
+  width: 100%;
+}
+
+/* Remove completamente ::after dos links com no-underline */
+.navbar-nav .nav-link.no-underline::after {
+  content: none;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #777676 !important;
+}
+
+/* Botão “Novos Cursos” */
+.navbar-nav .nav-link.btn-novos {
+  border: 2px solid #9d5c1f;
+  border-radius: 8px;
+  padding: 6px 16px;
+  color: #9d5c1f !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link.btn-novos:hover {
+  background-color: #9d5c1fcb;
+  color: #fff !important;
+}
+
+.hero .col-lg-6.text-start {
+  margin-top: 1.0rem; /* Ajuste o valor conforme necessário */
+}
+
+
+
+/* Ícone + texto */
+.navbar-nav .btn-login img {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+}
+
+/* Seção Hero */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(12, 7, 3, 0.445), rgb(77, 43, 20)), 
+    url("img/pexels-divinetechygirl-1181316.jpg") no-repeat center center;
+  background-size: cover;
+  color: white;
+}
+
+/* Títulos e parágrafos */
+@font-face {
+  font-family: 'MinhaFonte'; /* Nome que você usará para referenciar a fonte */
+  src: url('fonts/JosefinSans-Regular.ttf') format('truetype'); /* Caminho relativo ao CSS */
+  font-weight: normal; /* Peso padrão da fonte */
+}
+
+.hero h2 {
+  font-family: 'MinhaFonte'; /* Nome que você usará no CSS */
+  font-weight: 700px; /* peso da fonte */
+  font-size: 3.5rem;
+  letter-spacing: 2.5px !important;
+  color: white;
+}
+
+.hero h2 .highlight {
+  color: #cc941b; /* laranja */
+}
+.hero p {
+  font-family: 'MinhaFonte';
+  font-size: 1.2rem;
+  line-height: 2.0rem !important;
+}
+
+/* Botão personalizado página início */
+.btn-primary {
+  background-color: #6e4218;   /* cor principal */
+  border: none;
+  padding: 14px 32px;          /* deixa maior */
+  font-size: 1.0rem;           /* aumenta a fonte */
+  font-weight: 600;
+  border-radius: 50px;         /* arredondado */
+  transition: all 0.3s ease;   /* animação suave */
+}
+
+/* Hover (quando passa o mouse) */
+.btn-primary:hover {
+  background-color: #ffffff;   /* cor ao passar o mouse */
+  color: #6e4218 !important;
+       
+}
+/*rodapé da página início*/
+.footer-branco{
+  background-color: #6e4218;
+}
+
+footer a {
+  color: #ffffff;
+  transition: color 0.3s;
+}
+footer a:hover {
+  color: #cc941b;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero { 
+    min-height: auto;        /* deixa mais compacto em telas pequenas */
+    padding-top: 60px;       /* sobe um pouco o texto */
+    padding-bottom: 60px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+
+/* Ícone + texto */
+.navbar-nav .btn-login img {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+}
+
+
+
+/* ======= DROPDOWN ======= */
+#navbarDropdownMenuLink + .dropdown-menu .dropdown-item {
+  color: #9d5c1f;
+}
+
+#navbarDropdownMenuLink + .dropdown-menu .dropdown-item:hover {
+  background-color: #f0e6dd;
+  color: #000;
+}
+
+/* ======= RESPONSIVO ======= */
+@media (max-width: 768px) {
+  .logo {
+    width: 60px;
+    max-height: 50px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 10px;
+  }
+
+  .block2-pic img {
+    height: 180px;
+  }
+}
+
+/* ======= CARROSSEL ======= */
+.carousel-inner img {
+  border-radius: 10px;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+/* ======= BLOCO DE CURSOS ======= */
+.block2 {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 30px;
+}
+
+.block2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.block2-pic img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.nomegrandecima {
+  padding: 10px 15px;
+}
+
+.nome_curso_mini {
+  font-size: 16px;
+  font-weight: bold;
+  color: #9d5c1f;
+  margin-bottom: 10px;
+}
+
+#botaomatriculese {
+  background: #9d5c1f;
+  border-radius: 25px;
+  font-weight: 600;
+  color: white;
+  border: none;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+#botaomatriculese:hover {
+  background: #777676;
+  color: #ffffff;
+}
+
+/* ======= RODAPÉ ======= */
+footer {
+  background-color: #9d5c1f;
+  color: #fff;
+  font-size: 14px;
+  padding: 1rem 0;
+}
+
+/* ======= DARK MODE ======= */
+:root[data-bs-theme="dark"] {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #9d5c1f;
+  --nav-bg: #1a1a1a;
+  --border-color: #333;
+  --footer-bg: #0d0d0d;
+}
+
+:root[data-bs-theme="dark"] body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+:root[data-bs-theme="dark"] .navbar {
+  background-color: var(--nav-bg) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+:root[data-bs-theme="dark"] .navbar-nav .nav-link {
+  color: var(--text-color) !important;
+}
+
+:root[data-bs-theme="dark"] .block2 {
+  background: var(--card-bg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+:root[data-bs-theme="dark"] .nome_curso_mini {
+  color: #9d5c1f;
+}
+
+:root[data-bs-theme="dark"] footer {
+  background-color: var(--footer-bg);
+  color: #ccc;
+}
+
+:root[data-bs-theme="dark"] .form-control {
+  background-color: #2a2a2a;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
