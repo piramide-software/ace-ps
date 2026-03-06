@@ -186,7 +186,7 @@ body {
 
 /* Hover (quando passa o mouse) */
 .btn-primary:hover {
-  background-color: #ffffff;   /* cor ao passar o mouse */
+  background-color:#be7e34;   /* cor ao passar o mouse */
   color: #6e4218 !important;
        
 }
@@ -363,3 +363,96 @@ footer {
   border: 1px solid var(--border-color);
   color: var(--text-color);
 }
+
+/* ===== LOGIN ===== */
+
+.login-section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  linear-gradient(rgba(12,7,3,0.5), rgba(77,43,20,0.9)),
+  url("img/pexels-divinetechygirl-1181316.jpg") no-repeat center;
+  background-size:cover;
+}
+
+.login-container{
+  width:100%;
+  max-width:450px;
+  padding:20px;
+}
+
+.login-box{
+  background:white;
+  padding:40px;
+  border-radius:15px;
+
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* logo */
+
+.login-logo-area{
+  display:flex;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.login-logo-area span{
+  font-weight:bold;
+  font-size:1.2rem;
+  color:#9d5c1f;
+}
+
+/* titulo */
+
+.login-box h2{
+  margin-bottom:20px;
+  color:#9d5c1f;
+}
+
+/* inputs */
+
+.login-input{
+  width:100%;
+  padding:12px;
+  margin-top:5px;
+  margin-bottom:15px;
+
+  border-radius:25px;
+  border:1px solid #ddd;
+}
+
+/* lembrar */
+
+.login-remember{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:20px;
+}
+
+/* botão */
+
+.login-btn{
+  width:100%;
+}
+
+/* links */
+
+.login-links{
+  margin-top:15px;
+  text-align:center;
+}
+
+.login-links a{
+  color:#9d5c1f;
+  font-weight:600;
+}
+
+.login-links a:hover{
+  color:#ad8a14;
+}
+
