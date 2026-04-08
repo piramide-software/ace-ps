@@ -53,19 +53,67 @@ function () {
 }();
 
 var mobileNavbar = new MobileNavbar(".mobile-menu", ".nav-list", ".nav-list li");
-mobileNavbar.init(); // 👁 FUNÇÃO PARA MOSTRAR / OCULTAR SENHA
+mobileNavbar.init(); // 👁 MOSTRAR / OCULTAR SENHA
 
 var senha = document.querySelector("#senha");
 var toggleSenha = document.querySelector("#toggleSenha");
-toggleSenha.addEventListener("click", function () {
-  if (senha.type === "password") {
-    senha.type = "text";
-    this.classList.remove("bi-eye");
-    this.classList.add("bi-eye-slash");
-  } else {
-    senha.type = "password";
-    this.classList.remove("bi-eye-slash");
-    this.classList.add("bi-eye");
-  }
-});
+
+if (toggleSenha && senha) {
+  toggleSenha.addEventListener("click", function () {
+    if (senha.type === "password") {
+      senha.type = "text";
+      this.classList.remove("bi-eye");
+      this.classList.add("bi-eye-slash");
+    } else {
+      senha.type = "password";
+      this.classList.remove("bi-eye-slash");
+      this.classList.add("bi-eye");
+    }
+  });
+} // ==============================
+// 📄 MÁSCARAS CPF E TELEFONE
+// ==============================
+
+
+var cpfInput = document.querySelector("#cpf");
+var telInput = document.querySelector("#telefone"); // 🔹 CPF (000.000.000-00)
+
+if (cpfInput) {
+  cpfInput.addEventListener("input", function () {
+    var valor = cpfInput.value.replace(/\D/g, ""); // só números
+
+    valor = valor.substring(0, 11); // limite
+
+    if (valor.length > 9) {
+      valor = valor.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/, "$1.$2.$3-$4");
+    } else if (valor.length > 6) {
+      valor = valor.replace(/(\d{3})(\d{3})(\d{1,3})/, "$1.$2.$3");
+    } else if (valor.length > 3) {
+      valor = valor.replace(/(\d{3})(\d{1,3})/, "$1.$2");
+    }
+
+    cpfInput.value = valor;
+  });
+} // 🔹 TELEFONE ((99) 99999-9999)
+
+
+if (telInput) {
+  telInput.addEventListener("input", function () {
+    var valor = telInput.value.replace(/\D/g, ""); // só números
+
+    valor = valor.substring(0, 11); // limite (com DDD)
+
+    if (valor.length > 10) {
+      // celular com 9 dígitos
+      valor = valor.replace(/(\d{2})(\d{5})(\d{1,4})/, "($1) $2-$3");
+    } else if (valor.length > 6) {
+      // telefone fixo
+      valor = valor.replace(/(\d{2})(\d{4})(\d{1,4})/, "($1) $2-$3");
+    } else if (valor.length > 2) {
+      valor = valor.replace(/(\d{2})(\d{1,5})/, "($1) $2");
+    }
+
+    telInput.value = valor;
+  });
+}
 //# sourceMappingURL=scripts.dev.js.map

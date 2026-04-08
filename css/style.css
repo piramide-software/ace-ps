@@ -374,7 +374,7 @@ footer {
 
   background:
   linear-gradient(rgba(12,7,3,0.5), rgba(77,43,20,0.9)),
-  url("../img/pexels-divinetechygirl-1181316.jpg") no-repeat center;
+  url("../img/cadastro.jpg") no-repeat center;
   background-size:cover;
 }
 
@@ -461,4 +461,98 @@ footer {
 
 label{
   color: #9d5c1f;
+}
+/* ===== CADASTRO SPLIT ===== */
+
+.cadastro-section {
+  min-height: 100vh;
+}
+
+/* LADO ESQUERDO */
+.cadastro-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+}
+
+/* CAIXA DO FORM */
+.cadastro-box {
+  width: 100%;
+  max-width: 420px;
+  margin-top: 40px;
+}
+
+/* INPUTS */
+.cadastro-box .form-control {
+  border-radius: 25px;
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+/* BOTÃO */
+.cadastro-box .btn-primary {
+  border-radius: 25px;
+  background-color: #6e4218;
+  border: none;
+}
+
+.cadastro-box .btn-primary:hover {
+  background-color: #be7e34;
+  color: #6e4218;
+}
+
+/* LADO DIREITO (IMAGEM) */
+.cadastro-right {
+  position: relative;
+  background:
+    linear-gradient(rgba(12,7,3,0.5), rgba(77,43,20,0.9)),
+    url("../img/cadastro.jpg") no-repeat center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TEXTO SOBRE IMAGEM */
+.overlay-text {
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay-text h2 {
+  font-size: 2.5rem;
+}
+
+.overlay-text p {
+  font-size: 1.2rem;
+}
+
+/* ===== LOGO CADASTRO (isolado) ===== */
+
+.cadastro-logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* espaço entre logo e texto */
+  text-align: left;
+}
+
+.cadastro-logo-area img {
+  width: 50px;
+  height: auto;
+}
+
+.cadastro-logo-area h4 {
+  margin: 0;
+  font-size: 2.0rem;
+  color: #9d5c1f;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .cadastro-right {
+    display: none;
+  }
 }
